@@ -12,8 +12,9 @@ let gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	replace = require('gulp-replace');
 
-let siteUrl = 'http://wc-estore.host1670806.hostland.pro/';
-let siteDir = '../wc-estore/';
+let siteUrl = 'http://anticheporte.cf/';
+let siteDir = '../bs-antiche-porte/';
+
 
 gulp.task("scss", function () {
 	return gulp.src(siteDir + 'assets/scss/my.scss')
