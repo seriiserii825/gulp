@@ -30,8 +30,7 @@ gulp.task("scss", function () {
 		}))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest(siteDir + 'assets/css/'))
-		.pipe(browserSync.reload({stream: true}))
-		.pipe(notify("Change css"));
+		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task("watch", function () {
