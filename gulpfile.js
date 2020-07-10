@@ -15,7 +15,7 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://anticheporte.cf/';
 // let siteDir = '../bs-antiche-porte/';
 
-let siteUrl = 'http://bs-proseccobordoluce.cf/';
+let siteUrl = 'http://proseccoborgoluce.cf//';
 let siteDir = '../bs-proseccobordoluce/';
 
 
