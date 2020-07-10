@@ -12,8 +12,8 @@ let gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	replace = require('gulp-replace');
 
-let siteUrl = 'http://anticheporte.cf/';
-let siteDir = '../bs-antiche-porte/';
+let siteUrl = 'http://bs-proseccobordoluce.cf/';
+let siteDir = '../bs-proseccobordoluce/';
 
 
 gulp.task("scss", function () {
