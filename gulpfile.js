@@ -15,31 +15,37 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://anticheporte.cf/';
 // let siteDir = '../bs-antiche-porte/';
 
-let siteUrl = 'http://proseccoborgoluce.cf//';
-let siteDir = '../bs-proseccobordoluce/';
+// let siteUrl = 'http://wc-estore.host1670806.hostland.pro/';
+// let siteDir = '../wc-estore/';
+
+let siteUrl = 'http://gadda.cf/';
+let siteDir = '../bs-gadda/';
+
+//let siteUrl = 'http://proseccoborgoluce.cf//';
+//let siteDir = '../bs-proseccobordoluce/';
 
 
-gulp.task("scss", function () {
-	return gulp.src(siteDir + 'assets/scss/my.scss')
-		// .pipe(plumber())
-		.pipe(sourcemaps.init())
-		.pipe(wait(500))
-		.pipe(sass({
-			outputStyle: 'expanded'
-		}).on('error', notify.onError(function (error) {
-			return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
-		})))
-		.pipe(autoprefixer({
-			cascade: false
-		}))
-		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest(siteDir + 'assets/css/'))
-		.pipe(browserSync.reload({stream: true}));
-});
+// gulp.task("scss", function () {
+// 	return gulp.src(siteDir + 'assets/scss/my.scss')
+// 		// .pipe(plumber())
+// 		.pipe(sourcemaps.init())
+// 		.pipe(wait(500))
+// 		.pipe(sass({
+// 			outputStyle: 'expanded'
+// 		}).on('error', notify.onError(function (error) {
+// 			return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
+// 		})))
+// 		.pipe(autoprefixer({
+// 			cascade: false
+// 		}))
+// 		.pipe(sourcemaps.write('.'))
+// 		.pipe(gulp.dest(siteDir + 'assets/css/'))
+// 		.pipe(browserSync.reload({stream: true}));
+// });
 
-gulp.task("watch", function () {
-	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
-});
+// gulp.task("watch", function () {
+// 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
+// });
 
 gulp.task('browser-sync', function () {
 	browserSync.init({
