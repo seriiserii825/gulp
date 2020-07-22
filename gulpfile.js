@@ -53,7 +53,7 @@ gulp.task('browser-sync', function () {
 			target: siteUrl,
 			ws: true
 		},
-		reloadDelay: 2000
+		reloadDelay: 200
 	});
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
