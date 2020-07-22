@@ -60,4 +60,5 @@ gulp.task('browser-sync', function () {
 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
 });
 
-gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+gulp.task('default', gulp.series('browser-sync'));
+// gulp.task('default', gulp.parallel('watch', 'browser-sync'));
