@@ -21,8 +21,11 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../bs-gadda/';
 
-let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
-let siteDir = '../bs-alytaly/';
+// let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
+// let siteDir = '../bs-alytaly/';
+
+let siteUrl = 'http://myrewind.it/';
+let siteDir = '../bs-rewind/';
 
 //let siteUrl = 'http://proseccoborgoluce.cf//';
 //let siteDir = '../bs-proseccobordoluce/';
