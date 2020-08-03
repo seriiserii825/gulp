@@ -18,8 +18,11 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://wc-estore.host1670806.hostland.pro/';
 // let siteDir = '../wc-estore/';
 
-let siteUrl = 'http://gadda.cf/';
-let siteDir = '../bs-gadda/';
+// let siteUrl = 'http://gadda.cf/';
+// let siteDir = '../bs-gadda/';
+
+// let siteUrl = 'http://gadda.cf/';
+let siteDir = '../javascript/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
@@ -56,17 +59,31 @@ let siteDir = '../bs-gadda/';
 // 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
 // });
 
+// gulp.task('browser-sync', function () {
+// 	browserSync.init({
+// 		proxy: {
+// 			target: siteUrl,
+// 			ws: true
+// 		},
+// 		reloadDelay: 900
+// 	});
+// 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
+// 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
+// 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
+// });
+
 gulp.task('browser-sync', function () {
+
 	browserSync.init({
-		proxy: {
-			target: siteUrl,
-			ws: true
+		server: {
+			baseDir: siteDir
 		},
-		reloadDelay: 900
+		notify: true
 	});
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
+	gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
 });
 
 gulp.task('default', gulp.series('browser-sync'));
