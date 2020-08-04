@@ -18,11 +18,11 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://wc-estore.host1670806.hostland.pro/';
 // let siteDir = '../wc-estore/';
 
-let siteUrl = 'http://gadda.cf/';
-let siteDir = '../bs-gadda/';
+// let siteUrl = 'http://gadda.cf/';
+// let siteDir = '../bs-gadda/';
 
 // let siteUrl = 'http://gadda.cf/';
-// let siteDir = '../javascript-petricenco/';
+let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
@@ -60,12 +60,19 @@ let siteDir = '../bs-gadda/';
 // });
 
 gulp.task('browser-sync', function () {
+	// browserSync.init({
+	// 	proxy: {
+	// 		target: siteUrl,
+	// 		ws: true
+	// 	},
+	// 	reloadDelay: 900
+	// });
+
 	browserSync.init({
-		proxy: {
-			target: siteUrl,
-			ws: true
+		server: {
+			baseDir: siteDir
 		},
-		reloadDelay: 900
+		notify: true
 	});
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
