@@ -22,7 +22,7 @@ let gulp = require('gulp'),
 // let siteDir = '../bs-gadda/';
 
 // let siteUrl = 'http://gadda.cf/';
-let siteDir = '../javascript/';
+let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
