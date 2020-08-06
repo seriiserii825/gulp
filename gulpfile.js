@@ -21,17 +21,19 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../bs-gadda/';
 
-// let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
 
+// let siteUrl = 'http://bassoservizi.cf/';
+// let siteDir = '../bs-bassoservizi/';
+
 // let siteUrl = 'https://myrewind.it/';
 // let siteDir = '../bs-rewind/';
 
-let siteUrl = 'http://bertan.ml/';
-let siteDir = '../bs-bertan/';
+// let siteUrl = 'http://bertan.ml/';
+// let siteDir = '../bs-bertan/';
 
 //let siteUrl = 'http://proseccoborgoluce.cf//';
 //let siteDir = '../bs-proseccobordoluce/';
