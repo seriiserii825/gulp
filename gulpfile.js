@@ -26,8 +26,8 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
 
-// let siteUrl = 'http://bassoservizi.cf/';
-// let siteDir = '../bs-bassoservizi/';
+let siteUrl = 'http://bassoservizi.cf/';
+let siteDir = '../bs-bassoservizi/';
 
 // let siteUrl = 'https://myrewind.it/';
 // let siteDir = '../bs-rewind/';
