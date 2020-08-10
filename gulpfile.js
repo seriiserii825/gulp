@@ -21,13 +21,13 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../bs-gadda/';
 
-// let siteDir = '../javascript-petricenco/';
+let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
 
-let siteUrl = 'http://bassoservizi.cf/';
-let siteDir = '../cds/';
+// let siteUrl = 'http://bassoservizi.cf/';
+// let siteDir = '../cds/';
 
 // let siteUrl = 'https://myrewind.it/';
 // let siteDir = '../bs-rewind/';
@@ -62,20 +62,20 @@ let siteDir = '../cds/';
 // });
 
 gulp.task('browser-sync', function () {
-	browserSync.init({
-		proxy: {
-			target: siteUrl,
-			ws: true
-		},
-		reloadDelay: 900
-	});
-
 	// browserSync.init({
-	// 	server: {
-	// 		baseDir: siteDir
+	// 	proxy: {
+	// 		target: siteUrl,
+	// 		ws: true
 	// 	},
-	// 	notify: true
+	// 	reloadDelay: 900
 	// });
+
+	browserSync.init({
+		server: {
+			baseDir: siteDir
+		},
+		notify: true
+	});
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
