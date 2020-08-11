@@ -21,8 +21,8 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../bs-gadda/';
 
-// let siteDir = '../javascript-petricenco/';
-let siteDir = '../js-movies/';
+let siteDir = '../javascript-petricenco/';
+//let siteDir = '../js-movies/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
