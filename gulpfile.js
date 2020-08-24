@@ -27,7 +27,7 @@ let gulp = require('gulp'),
 // let siteDir = '../bs-alytaly/';
 
 let siteUrl = 'http://bassoservizi.cf/';
-let siteDir = '../cds/';
+let siteDir = '../bs-bassoservizi/';
 
 // let siteUrl = 'https://myrewind.it/';
 // let siteDir = '../bs-rewind/';
@@ -56,6 +56,7 @@ let siteDir = '../cds/';
 // 		.pipe(gulp.dest(siteDir + 'assets/css/'))
 // 		.pipe(browserSync.reload({stream: true}));
 // });
+
 
 // gulp.task("watch", function () {
 // 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
