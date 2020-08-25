@@ -21,14 +21,16 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../bs-gadda/';
 
+// let siteUrl = 'http://javascript.host1670806.hostland.pro/';
 // let siteDir = '../javascript-petricenco/';
+
+//let siteDir = '../js-movies/';
 
 // let siteUrl = 'http://dev.ilcaffecheaspettavi.it/';
 // let siteDir = '../bs-alytaly/';
 
 // let siteUrl = 'http://bassoservizi.cf/';
 // let siteDir = '../bs-bassoservizi/';
-
 
 let siteUrl = 'http://consorziostorm.cf/';
 let siteDir = '../bs-consorzio/';
