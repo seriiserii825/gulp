@@ -32,11 +32,11 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://bassoservizi.cf/';
 // let siteDir = '../bs-bassoservizi/';
 
-let siteUrl = 'http://consorziostorm.cf/';
-let siteDir = '../bs-consorzio/';
+//let siteUrl = 'http://consorziostorm.cf/';
+//let siteDir = '../bs-consorzio/';
 
-// let siteUrl = 'https://myrewind.it/';
-// let siteDir = '../bs-rewind/';
+ let siteUrl = 'https://myrewind.it/';
+ let siteDir = '../bs-rewind/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
