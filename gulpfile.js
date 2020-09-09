@@ -22,7 +22,7 @@ let gulp = require('gulp'),
 // let siteDir = '../bs-gadda/';
 
 // let siteUrl = 'http://gadda.cf/';
-// let siteDir = '../vue/';
+let siteDir = '../vue/';
 
 // let siteUrl = 'http://javascript.host1670806.hostland.pro/';
 // let siteDir = '../javascript-petricenco/';
@@ -33,10 +33,13 @@ let gulp = require('gulp'),
 // let siteDir = '../bs-alytaly/';
 
 // let siteUrl = 'http://bassoservizi.cf/';
-// let siteDir = '../cds/';
+// let siteDir = '../bs-bassoservizi/';
 
-// let siteUrl = 'https://myrewind.it/';
-// let siteDir = '../bs-rewind/';
+//let siteUrl = 'http://consorziostorm.cf/';
+//let siteDir = '../bs-consorzio/';
+
+ // let siteUrl = 'https://myrewind.it/';
+ // let siteDir = '../bs-rewind/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
@@ -63,6 +66,7 @@ let gulp = require('gulp'),
 // 		.pipe(browserSync.reload({stream: true}));
 // });
 
+
 // gulp.task("watch", function () {
 // 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
 // });
@@ -73,7 +77,7 @@ gulp.task('browser-sync', function () {
 	// 		target: siteUrl,
 	// 		ws: true
 	// 	},
-	// 	reloadDelay: 900
+	// 	reloadDelay: 1500
 	// });
 
 	browserSync.init({
