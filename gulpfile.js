@@ -24,6 +24,8 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../vue/';
 
+let siteDir = '../gsap/';
+
 // let siteUrl = 'http://javascript.host1670806.hostland.pro/';
 // let siteDir = '../javascript-petricenco/';
 
@@ -38,10 +40,8 @@ let gulp = require('gulp'),
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
-//  let siteUrl = 'https://myrewind.it/';
-//  let siteDir = '../bs-rewind/';
-
- let siteDir = '../gsap/';
+ // let siteUrl = 'https://myrewind.it/';
+ // let siteDir = '../bs-rewind/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
@@ -90,7 +90,6 @@ gulp.task('browser-sync', function () {
 	});
 	gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
-	gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
 });
