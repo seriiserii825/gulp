@@ -35,8 +35,11 @@ let gulp = require('gulp'),
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
- let siteUrl = 'https://myrewind.it/';
- let siteDir = '../bs-rewind/';
+//  let siteUrl = 'https://myrewind.it/';
+//  let siteDir = '../bs-rewind/';
+
+//  let siteUrl = 'https://myrewind.it/';
+ let siteDir = '../gsap/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
@@ -69,21 +72,22 @@ let gulp = require('gulp'),
 // });
 
 gulp.task('browser-sync', function () {
-	browserSync.init({
-		proxy: {
-			target: siteUrl,
-			ws: true
-		},
-		reloadDelay: 1500
-	});
-
 	// browserSync.init({
-	// 	server: {
-	// 		baseDir: siteDir
+	// 	proxy: {
+	// 		target: siteUrl,
+	// 		ws: true
 	// 	},
-	// 	notify: true
+	// 	reloadDelay: 1500
 	// });
+
+	browserSync.init({
+		server: {
+			baseDir: siteDir
+		},
+		notify: true
+	});
 	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
+	gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
 	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
 });
