@@ -24,7 +24,8 @@ let gulp = require('gulp'),
 // let siteUrl = 'http://gadda.cf/';
 // let siteDir = '../vue/';
 
-let siteDir = '../gsap/';
+// let siteDir = '../gsap/';
+let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://javascript.host1670806.hostland.pro/';
 // let siteDir = '../javascript-petricenco/';
