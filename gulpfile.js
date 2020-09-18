@@ -82,7 +82,7 @@ gulp.task('browser-sync', function () {
 			target: siteUrl,
 			ws: true
 		},
-		reloadDelay: 1500
+		reloadDelay: 2500
 	});
 
 	// browserSync.init({
@@ -98,4 +98,4 @@ gulp.task('browser-sync', function () {
 });
 
 // gulp.task('default', gulp.series('browser-sync'));
-gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
