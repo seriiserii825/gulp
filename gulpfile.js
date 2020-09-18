@@ -82,7 +82,7 @@ gulp.task('browser-sync', function () {
 			target: siteUrl,
 			ws: true
 		},
-		reloadDelay: 2500
+		reloadDelay: 1000
 	});
 
 	// browserSync.init({
