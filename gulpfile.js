@@ -26,11 +26,11 @@ let gulp = require('gulp'),
 // let siteDir = '../gsap/';
 // let siteDir = '../javascript-petricenco/';
 
-// let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
-// let siteDir = '../javascript-petricenco/';
+let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
+let siteDir = '../javascript-petricenco/';
 
-let siteUrl = 'http://zuccato.cf/';
-let siteDir = '../bs-zuccato/';
+// let siteUrl = 'http://zuccato.cf/';
+// let siteDir = '../bs-zuccato/';
 
 //let siteDir = '../js-movies/';
 
@@ -99,5 +99,5 @@ gulp.task('browser-sync', function () {
 });
 
 // gulp.task('default', gulp.series('browser-sync'));
-gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
-// gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+// gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));
