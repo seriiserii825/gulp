@@ -26,11 +26,11 @@ let gulp = require('gulp'),
 // let siteDir = '../gsap/';
 // let siteDir = '../javascript-petricenco/';
 
-// let siteUrl = 'http://javascript.host1670806.hostland.pro/';
-// let siteDir = '../javascript-petricenco/';
+let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
+let siteDir = '../javascript-petricenco/';
 
-let siteUrl = 'http://zuccato.cf/';
-let siteDir = '../bs-zuccato/';
+// let siteUrl = 'http://zuccato.cf/';
+// let siteDir = '../bs-zuccato/';
 
 //let siteDir = '../js-movies/';
 
@@ -59,7 +59,8 @@ gulp.task("scss", function () {
 		.pipe(sourcemaps.init())
 		.pipe(wait(500))
 		.pipe(sass({
-			outputStyle: 'expanded'
+			outputStyle: 'expanded',
+			allowEmpty: true
 		}).on('error', notify.onError(function (error) {
 			return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
 		})))
@@ -91,11 +92,12 @@ gulp.task('browser-sync', function () {
 	// 	},
 	// 	notify: true
 	// });
-	gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
-	gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
-	gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
-	gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
+	// gulp.watch(siteDir + "**/*.html").on('change', browserSync.reload);
+	// gulp.watch(siteDir + "**/*.php").on('change', browserSync.reload);
+	// gulp.watch(siteDir + "**/*.css").on('change', browserSync.reload);
+	// gulp.watch(siteDir + "**/*.js").on('change', browserSync.reload);
 });
 
 // gulp.task('default', gulp.series('browser-sync'));
-gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
+// gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));
