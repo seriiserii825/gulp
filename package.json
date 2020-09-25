@@ -72,6 +72,9 @@
   "keywords": [],
   "author": "serii <seriiburduja@gmail.com>",
   "license": "ISC",
+  "browserslist": [
+    ">1%"
+  ],
   "bugs": {
     "url": "https://github.com/seriiserii825/sedona.loc/issues"
   },
