@@ -1,5 +1,6 @@
 'use strict';
 
+const webpack = require('webpack-stream');
 let gulp = require('gulp'),
 	//css
 	// stylus = require('gulp-stylus'),
@@ -26,11 +27,11 @@ let gulp = require('gulp'),
 // let siteDir = '../gsap/';
 // let siteDir = '../javascript-petricenco/';
 
-// let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
-// let siteDir = '../javascript-petricenco/';
+let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
+let siteDir = '../javascript-petricenco/';
 
-let siteUrl = 'http://zuccato.cf/';
-let siteDir = '../bs-zuccato/';
+// let siteUrl = 'http://zuccato.cf/';
+// let siteDir = '../bs-zuccato/';
 
 //let siteDir = '../js-movies/';
 
@@ -43,8 +44,8 @@ let siteDir = '../bs-zuccato/';
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
- // let siteUrl = 'https://myrewind.it/';
- // let siteDir = '../bs-rewind/';
+// let siteUrl = 'https://myrewind.it/';
+// let siteDir = '../bs-rewind/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
@@ -72,9 +73,42 @@ gulp.task("scss", function () {
 		.pipe(browserSync.reload({stream: true}));
 });
 
+gulp.task("build-js", () => {
+	return gulp.src(siteDir + "assets/js/main.js")
+		.pipe(webpack({
+			mode: 'development',
+			output: {
+				filename: 'script.js'
+			},
+			watch: true,
+			devtool: "source-map",
+			module: {
+				rules: [
+					{
+						test: /\.m?js$/,
+						exclude: /(node_modules|bower_components)/,
+						use: {
+							loader: 'babel-loader',
+							options: {
+								presets: [['@babel/preset-env', {
+									debug: true,
+									corejs: 3,
+									useBuiltIns: "usage"
+								}]]
+							}
+						}
+					}
+				]
+			}
+		}))
+		.pipe(gulp.dest(siteDir + "/assets/js"))
+		.on("end", browserSync.reload);
+});
+
 
 gulp.task("watch", function () {
 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
+	gulp.watch(siteDir + 'assets/js/**/*.js', gulp.series('build-js'));
 });
 
 gulp.task('browser-sync', function () {
@@ -99,5 +133,6 @@ gulp.task('browser-sync', function () {
 });
 
 // gulp.task('default', gulp.series('browser-sync'));
-gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
+// gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
 // gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('build-js', 'watch', 'browser-sync'));
