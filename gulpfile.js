@@ -129,4 +129,4 @@ gulp.task('browser-sync', function () {
 // gulp.task('default', gulp.series('browser-sync'));
 // gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
 // gulp.task('default', gulp.parallel('watch', 'browser-sync'));
-gulp.task('default', gulp.parallel('webpack', 'watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));
