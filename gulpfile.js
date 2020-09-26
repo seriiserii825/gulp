@@ -1,15 +1,12 @@
 'use strict';
 
 let gulp = require('gulp'),
-	//css
-	// stylus = require('gulp-stylus'),
 	sass = require('gulp-sass'),
 	autoprefixer = require("gulp-autoprefixer"),
 	sourcemaps = require('gulp-sourcemaps'),
 	wait = require('gulp-wait'), notify = require("gulp-notify"),
-	plumber = require("gulp-plumber"),
-	browserSync = require('browser-sync').create(),
-	replace = require('gulp-replace');
+	browserSync = require('browser-sync').create();
+const webpack = require('webpack-stream');
 
 // let siteUrl = 'http://anticheporte.cf/';
 // let siteDir = '../bs-antiche-porte/';
@@ -26,11 +23,14 @@ let gulp = require('gulp'),
 // let siteDir = '../gsap/';
 // let siteDir = '../javascript-petricenco/';
 
-let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
-let siteDir = '../javascript-petricenco/';
+// let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
+// let siteDir = '../javascript-petricenco/';
 
 // let siteUrl = 'http://zuccato.cf/';
 // let siteDir = '../bs-zuccato/';
+
+const siteDir = '../bs-bunavestire/';
+const siteUrl = 'http://wp-bunavestire.host1670806.hostland.pro/';
 
 //let siteDir = '../js-movies/';
 
@@ -43,8 +43,8 @@ let siteDir = '../javascript-petricenco/';
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
- // let siteUrl = 'https://myrewind.it/';
- // let siteDir = '../bs-rewind/';
+// let siteUrl = 'https://myrewind.it/';
+// let siteDir = '../bs-rewind/';
 
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
@@ -52,6 +52,34 @@ let siteDir = '../javascript-petricenco/';
 //let siteUrl = 'http://proseccoborgoluce.cf//';
 //let siteDir = '../bs-proseccobordoluce/';
 
+
+let isDev = true;
+
+let webpackConfig = {
+	output: {
+		filename: "main.js"
+	},
+	module: {
+		rules: [
+			{
+				test: "/\.js$/",
+				loader: "babel-loader",
+				exclude: "/node_modules/"
+			}
+		]
+	},
+	mode: isDev ? 'development' : 'production',
+	devtool: isDev ? 'eval-source-map' : 'none',
+};
+
+gulp.task('webpack', function () {
+	return gulp.src(siteDir+'assets/js/main.js')
+		.pipe(webpack(webpackConfig))
+		.pipe(gulp.dest(siteDir+'assets/js/'))
+		.pipe(browserSync.reload({
+			stream: true
+		}));
+});
 
 gulp.task("scss", function () {
 	return gulp.src(siteDir + 'assets/scss/my.scss')
@@ -72,9 +100,9 @@ gulp.task("scss", function () {
 		.pipe(browserSync.reload({stream: true}));
 });
 
-
 gulp.task("watch", function () {
 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
+	gulp.watch(siteDir + 'assets/js/**/*.js', gulp.series('webpack'));
 });
 
 gulp.task('browser-sync', function () {
@@ -100,4 +128,5 @@ gulp.task('browser-sync', function () {
 
 // gulp.task('default', gulp.series('browser-sync'));
 // gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
-gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+// gulp.task('default', gulp.parallel('watch', 'browser-sync'));
+gulp.task('default', gulp.parallel('webpack', 'watch', 'browser-sync'));
