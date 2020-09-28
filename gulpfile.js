@@ -102,7 +102,7 @@ gulp.task("scss", function () {
 
 gulp.task("watch", function () {
 	gulp.watch(siteDir + 'assets/scss/**/*.scss', gulp.series('scss'));
-	gulp.watch(siteDir + 'assets/js/modules/*.js', gulp.series('webpack'));
+	gulp.watch(siteDir + 'assets/js/modules/**/*.js', gulp.series('webpack'));
 });
 
 gulp.task('browser-sync', function () {
