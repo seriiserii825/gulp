@@ -2,16 +2,22 @@
   "name": "gulp",
   "version": "4.0.0",
   "main": "gulpfile.js",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
   "dependencies": {
-    "core-js": "^3.6.5",
     "gsap": "^3.5.1",
     "jquery": "^3.5.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.7",
+    "core-js": "^3.4.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-if": "^2.0.2",
