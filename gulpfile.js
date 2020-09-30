@@ -55,7 +55,6 @@ const webpack = require('webpack-stream');
 
 
 let isDev = true;
-
 let webpackConfig = {
 	output: {
 		filename: 'webpack.js'
