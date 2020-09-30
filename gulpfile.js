@@ -54,7 +54,6 @@ let siteDir = '../bs-zuccato/';
 
 
 let isDev = true;
-
 let webpackConfig = {
 	output: {
 		filename: "webpack.js"
