@@ -2,8 +2,11 @@
   "name": "gulp",
   "version": "4.0.0",
   "main": "gulpfile.js",
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
   "dependencies": {
-    "core-js": "^3.6.5",
     "gsap": "^3.5.1",
     "jquery": "^3.5.1"
   },

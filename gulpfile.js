@@ -1,13 +1,5 @@
 'use strict';
 
-let gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	autoprefixer = require("gulp-autoprefixer"),
-	sourcemaps = require('gulp-sourcemaps'),
-	wait = require('gulp-wait'), notify = require("gulp-notify"),
-	browserSync = require('browser-sync').create();
-const webpack = require('webpack-stream');
-
 // let siteUrl = 'http://anticheporte.cf/';
 // let siteDir = '../bs-antiche-porte/';
 
@@ -52,19 +44,38 @@ let siteDir = '../bs-zuccato/';
 //let siteUrl = 'http://proseccoborgoluce.cf//';
 //let siteDir = '../bs-proseccobordoluce/';
 
+let gulp = require('gulp'),
+	sass = require('gulp-sass'),
+	autoprefixer = require("gulp-autoprefixer"),
+	sourcemaps = require('gulp-sourcemaps'),
+	wait = require('gulp-wait'), notify = require("gulp-notify"),
+	browserSync = require('browser-sync').create();
+const webpack = require('webpack-stream');
+
+
 
 let isDev = true;
 
 let webpackConfig = {
 	output: {
-		filename: "webpack.js"
+		filename: 'webpack.js'
 	},
+	watch: false,
 	module: {
 		rules: [
 			{
-				test: "/\.js$/",
-				loader: "babel-loader",
-				// exclude: "/node_modules/"
+				test: /\.m?js$/,
+				exclude: /(node_modules|bower_components)/,
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: [['@babel/preset-env', {
+							debug: true,
+							corejs: 3,
+							useBuiltIns: "usage"
+						}]]
+					}
+				}
 			}
 		]
 	},
@@ -128,5 +139,6 @@ gulp.task('browser-sync', function () {
 
 // gulp.task('default', gulp.series('browser-sync'));
 // gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
+gulp.task('default', gulp.series('webpack', gulp.parallel('watch', 'browser-sync')));
 // gulp.task('default', gulp.parallel('watch', 'browser-sync'));
 gulp.task('default', gulp.series('webpack', gulp.parallel('watch', 'browser-sync')));
