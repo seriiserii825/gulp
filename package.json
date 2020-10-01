@@ -1,47 +1,36 @@
 {
-  "name": "gulp",
-  "version": "4.0.0",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "gsap": "^3.5.1",
-    "jquery": "^3.5.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/node": "^7.10.5",
-    "@babel/preset-env": "^7.11.5",
-    "babel-loader": "^8.1.0",
-    "browser-sync": "^2.26.12",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-if": "^2.0.2",
-    "gulp-newer": "^1.4.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-wait": "0.0.2",
-    "webpack": "^4.44.2",
-    "webpack-stream": "^6.1.0"
-  },
+  "name": "window",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "sass-lint -v",
-    "lint:fix": "sass-lint-auto-fix"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/seriiserii825/sedona.loc.git"
-  },
-  "keywords": [],
-  "author": "serii <seriiburduja@gmail.com>",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/seriiserii825/sedona.loc/issues"
+  "browserslist": [
+    "> 1%",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.12",
+    "core-js": "^3.4.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-wait": "0.0.2",
+    "webpack": "^4.41.2",
+    "webpack-stream": "^5.2.1"
   },
-  "homepage": "https://github.com/seriiserii825/sedona.loc#readme",
-  "description": "I don't have a nastavnik",
-  "optionalDependencies": {}
+  "dependencies": {
+    "countup.js": "^2.0.7",
+    "gsap": "^3.5.1"
+  }
 }
