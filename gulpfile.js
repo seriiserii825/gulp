@@ -88,8 +88,8 @@ gulp.task('browser-sync', function () {
 	// });
 	gulp.watch(siteDir+"**/*.html").on('change', browserSync.reload);
 	gulp.watch(siteDir+"**/*.php").on('change', browserSync.reload);
-	gulp.watch(siteDir+"**/*.css").on('change', browserSync.reload);
-	gulp.watch(siteDir+"**/*.js").on('change', browserSync.reload);
+	gulp.watch(siteDir+"assets/css/**/*.css").on('change', browserSync.reload);
+	gulp.watch(siteDir+"assets/js/**/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('default', gulp.series('browser-sync'));
