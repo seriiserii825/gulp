@@ -1,7 +1,6 @@
 "use strict";
 
 const gulp = require("gulp");
-const webpack = require("webpack-stream");
 const sass = require('gulp-sass');
 const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require('gulp-sourcemaps');
@@ -23,7 +22,7 @@ const browserSync = require("browser-sync");
 // let siteUrl = 'http://javascript-petricenco.host1670806.hostland.pro/';
 // let siteDir = '../javascript-petricenco/';
 
-let siteUrl = 'http://zuccato.cf/';
+// let siteUrl = 'http://zuccato.cf/';
 
 // const siteDir = '../bs-bunavestire/';
 // const siteUrl = 'http://wp-bunavestire.host1670806.hostland.pro/';
@@ -45,45 +44,8 @@ let siteUrl = 'http://zuccato.cf/';
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
 
-//let siteUrl = 'http://proseccoborgoluce.cf//';
-//let siteDir = '../bs-proseccobordoluce/';
-
-let isDev = true;
-let webpackConfig = {
-	output: {
-		filename: "webpack.js"
-	},
-	watch: false,
-	module: {
-		rules: [
-			{
-				test: /\.m?js$/,
-				exclude: /(node_modules|bower_components)/,
-				use: {
-					loader: 'babel-loader',
-					options: {
-						presets: [['@babel/preset-env', {
-							debug: true,
-							corejs: 3,
-							useBuiltIns: "usage"
-						}]]
-					}
-				}
-			}
-		]
-	},
-	mode: isDev ? 'development' : 'production',
-	devtool: isDev ? 'eval-source-map' : 'none',
-};
-
-gulp.task('webpack', function () {
-	return gulp.src('assets/js/main.js')
-		.pipe(webpack(webpackConfig))
-		.pipe(gulp.dest('assets/js/'))
-		.pipe(browserSync.reload({
-			stream: true
-		}));
-});
+let siteUrl = 'http://proseccoborgoluce.cf//';
+let siteDir = '../bs-proseccobordoluce/';
 
 gulp.task("scss", function () {
 	return gulp.src('assets/scss/my.scss')
@@ -130,7 +92,6 @@ gulp.task('browser-sync', function () {
 	gulp.watch("**/*.js").on('change', browserSync.reload);
 });
 
-// gulp.task('default', gulp.series('browser-sync'));
+gulp.task('default', gulp.series('browser-sync'));
 // gulp.task('default', gulp.parallel('scss', 'watch', 'browser-sync'));
 // gulp.task('default', gulp.parallel('watch', 'browser-sync'));
-gulp.task('default', gulp.series('webpack', 'scss', gulp.parallel('watch', 'browser-sync')));
