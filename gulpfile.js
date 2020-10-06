@@ -48,7 +48,7 @@ let siteUrl = 'http://proseccoborgoluce.cf//';
 let siteDir = '../bs-proseccobordoluce/';
 
 gulp.task("scss", function () {
-	return gulp.src('assets/scss/my.scss')
+	return gulp.src(siteDir+'assets/scss/my.scss')
 		// .pipe(plumber())
 		.pipe(sourcemaps.init())
 		.pipe(wait(500))
@@ -62,13 +62,13 @@ gulp.task("scss", function () {
 			cascade: false
 		}))
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('assets/css/'))
+		.pipe(gulp.dest(siteDir+'assets/css/'))
 		.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task("watch", function () {
-	gulp.watch('assets/scss/**/*.scss', gulp.series('scss'));
-	gulp.watch('assets/js/modules/**/*.js', gulp.series('webpack'));
+	gulp.watch(siteDir+'assets/scss/**/*.scss', gulp.series('scss'));
+	gulp.watch(siteDir+'assets/js/modules/**/*.js', gulp.series('webpack'));
 });
 
 gulp.task('browser-sync', function () {
@@ -86,10 +86,10 @@ gulp.task('browser-sync', function () {
 	// 	},
 	// 	notify: true
 	// });
-	gulp.watch("**/*.html").on('change', browserSync.reload);
-	gulp.watch("**/*.php").on('change', browserSync.reload);
-	gulp.watch("**/*.css").on('change', browserSync.reload);
-	gulp.watch("**/*.js").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.html").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.php").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.css").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('default', gulp.series('browser-sync'));
