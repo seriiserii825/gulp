@@ -35,6 +35,8 @@ const browserSync = require("browser-sync");
 // let siteUrl = 'http://bassoservizi.cf/';
 // let siteDir = '../bs-bassoservizi/';
 
+let siteUrl = 'https://bludelego.it/';
+let siteDir = '../bs-delego/';
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
@@ -44,8 +46,8 @@ const browserSync = require("browser-sync");
 // let siteUrl = 'http://bertan.ml/';
 // let siteDir = '../bs-bertan/';
 
-let siteUrl = 'http://proseccoborgoluce.cf//';
-let siteDir = '../bs-proseccobordoluce/';
+// let siteUrl = 'http://proseccoborgoluce.cf//';
+// let siteDir = '../bs-proseccobordoluce/';
 
 gulp.task("scss", function () {
 	return gulp.src(siteDir+'assets/scss/my.scss')
