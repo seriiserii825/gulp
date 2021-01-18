@@ -35,8 +35,8 @@ const browserSync = require("browser-sync");
 // let siteUrl = 'http://bassoservizi.cf/';
 // let siteDir = '../bs-bassoservizi/';
 
-let siteUrl = 'https://bludelego.it/';
-let siteDir = '../bs-delego/';
+let siteUrl = 'https://semplicemente.eu/';
+let siteDir = '../wp-semplicemente/';
 //let siteUrl = 'http://consorziostorm.cf/';
 //let siteDir = '../bs-consorzio/';
 
@@ -90,8 +90,8 @@ gulp.task('browser-sync', function () {
 	// });
 	gulp.watch(siteDir+"**/*.html").on('change', browserSync.reload);
 	gulp.watch(siteDir+"**/*.php").on('change', browserSync.reload);
-	gulp.watch(siteDir+"assets/css/**/*.css").on('change', browserSync.reload);
-	gulp.watch(siteDir+"assets/js/**/*.js").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.css").on('change', browserSync.reload);
+	gulp.watch(siteDir+"**/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('default', gulp.series('browser-sync'));
