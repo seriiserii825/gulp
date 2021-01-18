@@ -35,10 +35,11 @@ const browserSync = require("browser-sync");
 // let siteUrl = 'http://bassoservizi.cf/';
 // let siteDir = '../bs-bassoservizi/';
 
-let siteUrl = 'https://semplicemente.eu/';
-let siteDir = '../wp-semplicemente/';
-//let siteUrl = 'http://consorziostorm.cf/';
-//let siteDir = '../bs-consorzio/';
+//let siteUrl = 'https://semplicemente.eu/';
+//let siteDir = '../wp-semplicemente/';
+
+let siteUrl = 'http://consorziostorm.cf/';
+let siteDir = '../bs-consorzio/';
 
 // let siteUrl = 'https://myrewind.it/';
 // let siteDir = '../bs-rewind/';
